@@ -41,7 +41,6 @@ def player(board):
     else:
         return X
 
-    raise PlayerFunctionError
 
 
 def actions(board):
@@ -55,7 +54,7 @@ def actions(board):
                 if board[i][j] == EMPTY:
                     possibleActions.add((i, j))
     return possibleActions
-    raise ActionsFunctionError
+
 
 
 def result(board, action):
@@ -75,7 +74,7 @@ def result(board, action):
 
     return newBoard
 
-    raise NotImplementedError
+
 
 
 def winner(board):
@@ -128,7 +127,7 @@ def winner(board):
         return O
 
     return None
-    raise NotImplementedError
+
 
 
 def terminal(board):
@@ -139,7 +138,7 @@ def terminal(board):
         return True
 
     return False
-    raise NotImplementedError
+
 
 
 def utility(board):
@@ -152,7 +151,7 @@ def utility(board):
         return -1
     else:
         return 0
-    raise NotImplementedError
+
 
 
 def minimax(board):
@@ -181,7 +180,7 @@ def minimaxSupport(board):
             if value[0] > lastValue[0]:
                 bestAction = action
         return [value[0], bestAction]
-        raise NotImplementedError
+
 # Minimizing player
 
     def mini(board):
@@ -196,7 +195,7 @@ def minimaxSupport(board):
             if value[0] < lastValue[0]:
                 bestAction = action
         return [value[0], bestAction]
-        raise NotImplementedError
+
 
     if player(board) == X:
         results = maxi(board)
@@ -204,4 +203,4 @@ def minimaxSupport(board):
         results = mini(board)
 
     return results
-    raise NotImplementedError
+
